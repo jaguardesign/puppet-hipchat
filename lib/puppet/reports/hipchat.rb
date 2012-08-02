@@ -23,8 +23,8 @@ Puppet::Reports.register_report(:hipchat) do
     Puppet.debug "Sending status for #{self.host} to Hipchat channel #{HIPCHAT_ROOM}"
     color = case self.status
       when 'failed' then 'red'
-      when 'changed' then 'green'
-      else 'yellow'
+      when 'changed' then 'purple'
+      else 'green'
     end
     msg = "Puppet run for #{self.host} #{self.status} at #{Time.now.asctime}"
     client = HipChat::Client.new(HIPCHAT_API)
